@@ -1,0 +1,24 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "gid assignment2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vicky Soni",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^6.7.2"
+  }
+}

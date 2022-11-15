@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "cabcfc87-4002-4b2d-8e1c-3618832be9eb",
+		"name": "gid assignment 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24137412"
+	},
+	"item": [
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "/posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/:postId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/{{postid}}",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Hello",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Checking",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://source.unsplash.com/random",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "HIhd",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "hjadh hashdiu 89328 kjbkd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://g.com/sdjhhjh.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts/{{postid}}",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/{{postid}}",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Vicky Soni",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "vicky@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Vicky1234@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let accToken = pm.response.json().token;",
+							"pm.environment.set(\"token\", accToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "vicky@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Vicky1234@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpY2t5QGdtYWlsLmNvbSIsImlkIjoiNjM3MjA5MTRkOGU4Y2JlYjJhMzBmZjQyIiwiaWF0IjoxNjY4NDkyNzQxLCJleHAiOjE2Njg0OTM2NDF9.EqEigt4M6nKyEphiFssydFX7sfxnrNEo_OxbiYgH-Dk"
+		}
+	]
+}
